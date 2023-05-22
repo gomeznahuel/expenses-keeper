@@ -1,5 +1,10 @@
-import RootNavigator from "./src/navigation/RootNavigator";
+import { NavigationContainer } from "@react-navigation/native";
+import { BottomTabBar } from "./src/navigation";
 
 export default function App() {
-  return <RootNavigator />;
+  return ( 
+    <NavigationContainer>
+      <BottomTabBar />
+    </NavigationContainer>
+  );
 }

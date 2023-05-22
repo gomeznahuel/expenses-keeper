@@ -1,5 +1,5 @@
 import React from "react";
-import { FlatList, Text } from "react-native";
+import { Text } from "react-native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { MainStackParamList } from "../../types/navigate.types";
 import { Button, CardView } from "../../components";
