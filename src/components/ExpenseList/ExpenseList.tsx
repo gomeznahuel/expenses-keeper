@@ -1,26 +1,24 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, Button } from "react-native";
-import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "../../store/store";
+import { useDispatch } from "react-redux";
 import { addExpense, subtractExpense } from "../../store/actions/actions";
 
 const ExpenseList: React.FC = () => {
-  const [newExpense, setNewExpense] = useState<string>("0"); // State for the new expense value
-  const expenses = useSelector((state: RootState) => state.expenses.toString()); // Access the expenses state from the store
-  const dispatch = useDispatch(); // Get the dispatch function
+  const [newExpense, setNewExpense] = useState<string>("0"); 
+  const dispatch = useDispatch();
 
   const handleInputChange = (text: string) => {
-    setNewExpense(text.replace(/[^0-9]/g, "")); // Update the new expense value in state and allow only numeric input
+    setNewExpense(text.replace(/[^0-9]/g, ""));
   };
 
   const handleAddExpense = () => {
-    dispatch(addExpense(parseInt(newExpense, 10))); // Dispatch an action to add the new expense
-    setNewExpense("0"); // Reset the new expense value
+    dispatch(addExpense(parseInt(newExpense, 10)));
+    setNewExpense("0");
   };
 
   const handleSubtractExpense = () => {
-    dispatch(subtractExpense(parseInt(newExpense, 10))); // Dispatch an action to add the new expense
-    setNewExpense("0"); // Reset the new expense value
+    dispatch(subtractExpense(parseInt(newExpense, 10)));
+    setNewExpense("0");
   };
 
   return (
