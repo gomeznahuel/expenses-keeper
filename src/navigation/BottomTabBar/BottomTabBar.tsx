@@ -1,7 +1,7 @@
 import React from "react";
 import MainStack from "../MainStack/MainStack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { ContactScreen, DashboardScreen, InstallmentsScreen } from "../../screens";
+import { ContactScreen, DashboardScreen, HomeScreen, InstallmentsScreen } from "../../screens";
 import { TabBarIcon } from "../../components";
 import styles from "./styles";
 
@@ -11,8 +11,8 @@ const BottomTabBar = () => {
   return (
     <Tab.Navigator screenOptions={{ headerShown: false, tabBarShowLabel: false, tabBarStyle: styles.tabBar }}>
       <Tab.Screen
-        name="HomeNavigation"
-        component={MainStack}
+        name="HomeScreen"
+        component={HomeScreen}
         options={{
           tabBarIcon: ({ focused }) => (
             <TabBarIcon iconName="home" focused={focused} />
